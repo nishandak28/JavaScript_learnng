@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassList</title>
+    <style>
+        .highlight {
+            text-decoration: double;
+            font-style: italic;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <h1 id = "text">Welcome to the Magic show</h1>
+
+    <button onclick="styler()">add style</button>
+    <button onclick="remover()">Remove Style</button>
+    <button onclick="toggler()">toggle</button>
+    <button onclick="container()">Contain</button>
+
+    <script>
+
+        txt = document.getElementById("text");
+
+        function styler() {
+            txt.classList.add("highlight")
+        }
+
+        function remover() {
+            txt.classList.remove("highlight")
+        }
+
+        function toggler() {
+            txt.classList.toggle("highlight")
+        }
+
+        function container() {
+            if(txt.classList.contains("highlight")) {
+                alert("styled element")
+            } else {
+                alert("Unstyled element")
+            }
+        }
+
+    </script>
+</body>
+</html>

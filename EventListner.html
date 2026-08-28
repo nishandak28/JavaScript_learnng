@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse event</title>
+
+    <style>
+        #mydiv {
+        height: 200px;
+        width:200px;
+        background-color: aquamarine;
+    }
+
+    input {
+        margin-top: 20px;
+        background-color: grey;
+    }
+    </style>
+</head>
+<body>
+    <h1>Events</h1>
+
+    <div id="mydiv"></div>
+    <input type="text">
+    <br>
+    <br>
+    <form action="">
+        <label for="int">Enter name:</label>
+        <input type="text" id="int">
+        <br>
+        <button>Summit</button>
+    </form>
+
+    <script>
+
+        //MOUSE EVENTS*****
+
+        let frame = document.getElementById("mydiv");
+        frame.addEventListener("click" ,() => {
+            frame.style.backgroundColor = "red";
+            frame.textContent = "User Single Clicked";
+        });
+
+        frame.addEventListener("dblclick" ,() => {
+            frame.style.backgroundColor = "yellow";
+            frame.textContent = "User double Clicked";
+        });
+
+        frame.addEventListener("mouseover" ,() => {
+            frame.style.backgroundColor = "green";
+            frame.style.zoom("5px");
+        });
+
+        frame.addEventListener("mouseout" ,() => {
+            frame.style.backgroundColor = "aquamarine";
+        });
+
+        frame.addEventListener("mousemove" ,(e) => {
+            frame.innerText = `X axis = ${e.offsetX} Y Axis : ${e.offsetY}`;
+        });
+
+
+        //KEYBOARD EVENT************
+
+        let inputBox = document.querySelector("input");
+
+        inputBox.addEventListener("keydown" , (e) => {
+            console.log(`KeyPressed is ${e.key}`);
+        });
+
+        inputBox.addEventListener("keyup" , (e) => {
+            console.log(`KeyReleased is ${e.key}`);
+        });
+
+        inputBox.addEventListener("keypress" , (e) => {
+            let check =/^[a-zA-z/]^/;
+
+            if(!check.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+
+        //********* FORM EVENT 
+
+        let form = document.querySelector("form");
+        let input2 = document.querySelector("#int");
+
+        form.addEventListener("submit", (e) => {
+            alert("Form is summited");
+            e.preventDefault();
+        });
+
+        input2.addEventListener("focus", (e) => {
+            console.log("input field focused");
+        });
+
+        input2.addEventListener("blur", (e) => {
+            console.log("input field not focused");
+        });
+
+        input2.addEventListener('change', (e) => {
+            console.log(`The input changed to ${e.target.value}`);
+        });
+
+        input2.addEventListener('input', (e) => {
+            console.log(`The input changed to ${e.target.value}`);
+        });
+
+    </script>
+</body>
+</html>

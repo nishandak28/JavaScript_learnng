@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1> Document Object Model</h1>
+
+    <p>Document get by tag name</p>
+    <p class = "blue"> Document get by class</p>
+    <p class = "blue">Document get by id</p>
+    <p id = "green">Document get query</p>
+
+    <button onclick="clicked()">Click me</button>
+
+
+    <script>
+
+        document.querySelector("h1").innerHTML = "<h2><i>LEARNING DOM </i></h2>"
+
+
+
+
+
+        document.getElementsByTagName("P")[0].style.color="red"; //Accessing single element
+        let pl = document.getElementsByClassName("blue"); //Accesing using class
+            
+            for(let i=0; i <pl.length; i++) {
+                pl[i].style.color="blue";
+            }
+        document.getElementById("green").style.color="green"; //Accesing using id
+
+        function clicked() { //Accessing using collection of tags
+            let cl = document.getElementsByTagName("p");
+            
+            for(let i=0; i <cl.length; i++) {
+                cl[i].style.color="white";
+                cl[i].style.backgroundColor ="black";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Atrribute setter, getter , remover</h1>
+    <a href="https://www.kodnest.com">CLick to visit codenest</a>
+
+    <button onclick="setter()">Set</button>
+    <button onclick="getter()">Get</button>
+    <button onclick="remover()">Remove</button>
+
+    <script>
+        let ach = document.querySelector("a");
+
+        function setter() {
+            ach.setAttribute("href", "https://www.instagram.com");
+            ach.innerText = "click to visit instagram";
+        }
+
+        function getter() {
+            mes = ach.getAttribute("href");
+            alert(mes);
+        }
+
+        function remover() {
+            ach.removeAttribute("href");
+            alert("link has been removed")
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            height: 200px;
+            width: 300px;
+            background-color: aqua;
+            border: 2px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ADDING AND REMOVING</h1>
+
+    <button onclick="addeer()">ADD</button>
+    <button onclick="remover()">REMOVE</button>
+    <br>
+
+    <script>
+        function addeer() {
+            let bd = document.querySelector("body");
+            let d = document.createElement("div");
+            bd.appendChild(d);
+        }
+
+        function remover() {
+            bd = document.querySelector("body");
+            remdiv = document.querySelector("div");
+            bd.removeChild(remdiv);
+        }
+    </script>
+</body>
+</html>
