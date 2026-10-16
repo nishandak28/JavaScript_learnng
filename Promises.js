@@ -1,6 +1,6 @@
 const p = new Promise((resolve, reject) => {
     let app = "BMS";
-    if(app === "MS") {
+    if(app === "BMS") {
         resolve();
     } else {
         reject(new Error("BMS is not found"));
